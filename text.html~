@@ -1,0 +1,63 @@
+<html>
+<head><title>abcd
+</title>
+<style type="text/css">
+	#anurag{
+	width:1280px;
+	height:690px;
+	background-image:url(step0002.jpg);
+margin:10px auto;
+
+
+
+
+
+
+}
+#anurag1{
+width:800px;
+height:60px;
+background:white;
+margin-left:0px;
+float:left;
+
+}
+#anurag2{
+width:800px;
+height:60px;
+background:white;
+margin-left:0px;
+float:left;
+
+</style>
+</head>
+<body text="black" background="gray">
+
+<img src="home-automation-3.jpg" width="1280" height="650"/>
+<img src="Link to jm_homeautomation_web1.jpg" width="1280" height="660" />
+
+<h1><center>Executive Summary</center></h1>
+<p><font size=4>ICE CRYSTAL Aspire to be an innovation driven electronics manufacturer
+capable of introducing low cost automated home appliances and gadgets. We aim
+to position ourselves as a company driven by innovation but provides products at
+affordable rates. Initially our focus will also be on providing professional wiring
+services for homes and manufacturing, marketing and installing home automation
+systems.</font></p>
+
+<h1><center>Vision &nbsp&nbsp&nbsp and &nbsp&nbsp&nbsp Mission</center></h1>
+<p><font size=4>Our vision is to become the leading tech company in India with cutting edge
+products, but we want to remain as a company focused on scale rather than
+premium. We want to introduce more automated gadgets at affordable rate and
+make it part of the daily life of people, we want to secure our position as leader in
+automation and cool gadgets in consumer mind.</font></p>
+<div id="anurag">
+<h2 align="left"><font size="7">Team</font></h2>
+	<div id="anurag1">
+<p><font size="6"><ul><li>Anurag Singh, IMSc Vth year Chemistry Dept</li></ul></font></p><img src="anurag1(1).jpg"/><br><br><br></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="anurag2">
+<p><font size="6"><ul><li>Rahul E B, IMT Vth Year Earth science Dept</li></ul></font></p><img src="rahul(1).jpg"/>
+</div>
+</div>
+
+</body>
+</html>
