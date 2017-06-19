@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <link rel="stylesheet" href="file1_files/w3.css">
+    <style>
+        .bal1 {
+            /*background-image: url("pic1.jpg");*/
+            border: 0px solid #000000;
+            position: absolute;
+            top: 30%;
+            left: 10%;
+            width: 40%;
+        }
+        
+        .bal2 {
+            padding: 0px 0px 0px 24px;
+            background-color: #0000bb;
+            color: white;
+        }
+        
+        #pic1 {
+            border: 0px solid #000000;
+        }
+        
+        body {
+            margin: 0px;
+            width: "100%";
+        }
+        
+        h1 {
+            font-family: "Roboto";
+            font-weight: 200;
+        }
+        
+        h3 {
+            font-family: "Roboto";
+            font-weight: 300;
+        }
+        
+        .trans {
+            opacity: 0.7;
+            filter: alpha(opacity=50);
+        }
+        
+        .w3-color1 {
+            background-color: #ccccff;
+            color: black;
+        }
+        
+        .lbr {
+            line-height: 1;
+        }
+    </style>
+</head>
+
+<body id="demo" onload="con()">
+    <img id="pic1" src="file1_files/pic1.jpg" alt="" width="100%">
+    <div class="bal1">
+        <div class="w3-row bal2">
+            <h1>MedAutonetics</h1>
+        </div>
+        <div class="w3-col w3-color1 trans">
+            <form class="w3-container">
+                <div class="w3-row" style="padding: 1px 1px 16px 16px">
+                    <h3> Login</h3>
+                    <br class="lbr"> <input class="w3-input w3-border" type="text">
+                </div>
+                <div class="w3-row" style="padding: 1px 1px 16px 16px">
+                    <h3> Password </h3>
+                    <br class="lbr"> <input class="w3-input w3-border" type="password">
+                </div>
+                <div class="w3-row">
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function con() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                // Typical action to be performed when the document is ready:
+                document.getElementById("demo").innerHTML += xhttp.responseText;
+            };
+            xhttp.open("GET", "http://localhost:6789", true);
+            xhttp.send();
+        }
+    </script>
+
+</body>
+
+</html>
