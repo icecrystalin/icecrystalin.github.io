@@ -54,7 +54,7 @@
     </style>
 </head>
 
-<body id="demo" onload="con()">
+<body id="demo" onload="adn()">
     <img id="pic1" src="pic1.jpg" alt="" width="100%">
     <div class="bal1">
         <div class="w3-row bal2">
@@ -75,10 +75,70 @@
                 </div>
             </form>
         </div>
-
     </div>
+    <svg id="puls" height="180" width="720" style="position:fixed; bottom:0px; left:0px;">
+        <polyline id="as" points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" fill='#ffffff' fill-opacity='0.0' style="stroke:#0000bb;stroke-width:4" />
+        <polyline id="as1" points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" fill='#ffffff' fill-opacity='0.0' style="stroke:#4444bb;stroke-width:4" />
+        <polyline id="as2" points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" fill='#ffffff' fill-opacity='0.0' style="stroke:#8888bb;stroke-width:4" />
+        <polyline id="as3" points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" fill='#ffffff' fill-opacity='0.0' style="stroke:#bbbbff;stroke-width:4" />
+        <polyline id="as4" points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" fill='#ffffff' fill-opacity='0.0' style="stroke:#aaaaff;stroke-width:4" />
+    </svg>
 
     <script>
+        function adn() {
+            var a = window.innerWidth;
+            var b = document.getElementById("puls");
+            b.setAttribute("width", a);
+
+        }
+        var r = document.getElementById("as");
+        var r1 = document.getElementById("as1");
+        var r2 = document.getElementById("as2");
+        var r3 = document.getElementById("as3");
+        var r4 = document.getElementById("as4");
+        var d = "";
+        var d1 = "";
+        var d2 = "";
+        var d3 = "";
+        var d4 = "";
+        var id = setInterval(frame, 5);
+        var ik = 0;
+
+        function frame() {
+            d = "";
+            d1 = "";
+            d2 = "";
+            d3 = "";
+            d4 = "";
+            for (var i = -50, j = 0;
+                (i < window.innerWidth) && (j < 200); i++, j++) {
+                var il = Math.cos((i + ik) / 70.0 * 0.5);
+                var il1 = Math.cos((i + ik) / 50.0 * 0.5);
+                var il2 = Math.cos((i + ik) / 65.0 * 0.5);
+                var il3 = Math.cos((i + ik) / 75.0 * 0.5);
+                var il4 = Math.cos((i + ik) / 50.0 * 0.5);
+                var ilk = il + il1 + il2 + il3 + il4;
+                d += (i + ik + 10).toString() + "," + (il * 50 + 100).toString() + " ";
+                d1 += (i + ik + 70).toString() + "," + (il1 * 80 + 100).toString() + " ";
+                d2 += (i + ik + 180).toString() + "," + (il2 * 50 + 100).toString() + " ";
+                d3 += (i + ik + 100).toString() + "," + (il3 * 60 + 100).toString() + " ";
+                d4 += (i + ik).toString() + "," + (il4 * 40 + 100).toString() + " ";
+            }
+            //console.log(d);
+            r.setAttribute("points", d);
+            r1.setAttribute("points", d1);
+            r2.setAttribute("points", d2);
+            r3.setAttribute("points", d3);
+            r4.setAttribute("points", d4);
+            if (ik == window.innerWidth) {
+                ik = 0;
+            } else {
+                ik++;
+            }
+        }
+
+
+
         function con() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
