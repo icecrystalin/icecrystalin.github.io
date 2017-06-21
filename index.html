@@ -57,6 +57,23 @@
             font-weight: 200;
         }
     </style>
+
+    <link rel="stylesheet" href="WebGL%20Demo_files/webgl.css" type="text/css">
+    <script src="WebGL%20Demo_files/sylvester.js" type="text/javascript"></script>
+    <script src="WebGL%20Demo_files/glUtils.js" type="text/javascript"></script>
+    <script src="WebGL%20Demo_files/webgl-demo.js" type="text/javascript"></script>
+
+    <!-- Fragment shader program -->
+
+    <script id="shader-fs" type="x-shader/x-fragment">
+        varying lowp vec4 vColor; void main(void) { gl_FragColor = vColor; }
+    </script>
+
+    <!-- Vertex shader program -->
+
+    <script id="shader-vs" type="x-shader/x-vertex">
+        attribute vec3 aVertexPosition; attribute vec4 aVertexColor; uniform mat4 uMVMatrix; uniform mat4 uPMatrix; varying lowp vec4 vColor; void main(void) { gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0); vColor = aVertexColor; }
+    </script>
 </head>
 
 <body id="demo" onload="adn()">
@@ -81,7 +98,7 @@
             </form>
         </div>
     </div>
-    <svg id="puls" height="180" width="720" style="position:fixed; bottom:0px; left:0px;">
+    <!--<svg id="puls" height="180" width="720" style="position:fixed; bottom:0px; left:0px;">
         <polyline id="as"  points="0,40 40,0" fill='#ffffff' fill-opacity='0.0' style="stroke:#0000bb;stroke-width:4" />
         <polyline id="as1" points="0,40 40,0" fill='#ffffff' fill-opacity='0.0' style="stroke:#4444bb;stroke-width:4" />
         <polyline id="as2" points="0,40 40,0" fill='#ffffff' fill-opacity='0.0' style="stroke:#8888bb;stroke-width:4" />
@@ -90,7 +107,7 @@
         <polyline id="as5" points="0,40 40,0" fill='#ffffff' fill-opacity='0.0' style="stroke:#8888bb;stroke-width:4" />
         <polyline id="as6" points="0,40 40,0" fill='#ffffff' fill-opacity='0.0' style="stroke:#4444ff;stroke-width:4" />
         <polyline id="as7" points="0,40 40,0" fill='#ffffff' fill-opacity='0.0' style="stroke:#8888ff;stroke-width:4" />
-    </svg>
+    </svg>-->
     <div class="w3-row">
         <div class="w3-row" style="padding: 100px 1px 16px 16px">
             <h1>
@@ -102,16 +119,37 @@
                 We develop tools and infrastructure for the operations in healthcare industy
             </h3>
         </div>
+        <div class="w3-row" style="padding: 100px 1px 16px 16px">
+            <h1>
+                Services we provide
+            </h1>
+        </div>
+        <div class="w3-row" style="padding: 1px 1px 16px 100px">
+            <div class="w3-col l6">
+                <h3 class="light">
+                    We develop tools and infrastructure for the operations in healthcare industy
+                </h3>
+            </div>
+            <div>
+                <h3 class="light">
+                    Logistic optimization and automation with informative display of
+                </h3>
+            </div>
+        </div>
+        <canvas id="glcanvas" width="640" height="480">
+            Your browser doesn't appear to support the <code>&lt;canvas&gt;</code> element.
+        </canvas>
     </div>
 
     <script>
         function adn() {
-            var a = window.innerWidth;
-            var b = document.getElementById("puls");
-            b.setAttribute("width", a);
+            start();
+            //var a = window.innerWidth;
+            //var b = document.getElementById("puls");
+            //b.setAttribute("width", a);
 
         }
-        var r = document.getElementById("as");
+        /*var r = document.getElementById("as");
         var r1 = document.getElementById("as1");
         var r2 = document.getElementById("as2");
         var r3 = document.getElementById("as3");
@@ -174,6 +212,7 @@
             } else {
                 ik++;
             }
+
         }
 
 
@@ -186,7 +225,7 @@
             };
             xhttp.open("GET", "http://localhost:6789", true);
             xhttp.send();
-        }
+        }*/
     </script>
 
 </body>
