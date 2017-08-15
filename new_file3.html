@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <script src="jquery.min.js"></script>
+    <script src="roundslider.min.js"></script>
+
+    <!-- plus a jQuery UI theme, here I use "flick" -->
+    <link rel="stylesheet" href="roundslider.min.css">
+
+    <style>
+        #appearance6 .rs-border {
+            border-width: 0px;
+        }
+        
+        #appearance6 .rs-border.rs-outer {
+            border: 14px solid #002e5b;
+        }
+        
+        #appearance6 .rs-range-color {
+            background: #fde428;
+        }
+        
+        #appearance6 .rs-handle {
+            background: #fde428;
+            margin-left: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider" id="appearance6"></div>
+    <script>
+        $("#appearance6").roundSlider({
+            min: -100,
+            max: 100,
+            radius: 90,
+            width: 14,
+            handleSize: "+0",
+            sliderType: "range",
+            value: "-50,50"
+        });
+    </script>
+</body>

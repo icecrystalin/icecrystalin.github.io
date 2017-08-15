@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <script src="plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <div id="graph"></div>
+    <button onclick="javascript:randomize();">Randomize!</button>
+</body>
+<script>
+    function randomize() {
+        Plotly.animate('graph', {
+            data: [{
+                y: [Math.random(), Math.random(), Math.random()]
+            }],
+            traces: [0],
+            layout: {}
+        }, {
+            transition: {
+                duration: 500,
+                easing: 'cubic-in-out'
+            }
+        })
+    }
+
+    Plotly.plot('graph', [{
+        data: {
+            x: [-0.5447,
+                0.6985, -0.4701,
+                2.0143, -1.6980,
+                0.6423,
+                2.6279,
+                1.9657,
+                2.4489, -2.5800, -1.8162, -1.6122
+            ],
+            y: [
+                1.3323, -0.6359,
+                0.1063, -0.0386, -0.7641, -1.6500, -0.5471,
+                1.0301, -0.1908, -0.1596, -1.2127, -1.5549
+            ],
+            z: [-0.0013,
+                0.0058,
+                0.0070, -0.0057, -0.0059, -0.0141,
+                0.7418,
+                0.2163, -0.9966,
+                0.2234, -0.9959,
+                0.7449
+            ],
+            type: "scatter3d",
+            mode: "markers",
+            marker: {
+                color: [1,
+                    2,
+                    3,
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                colorscale: 'Viridis',
+                showscale: true,
+            }
+        }
+    }]);
+</script>
+
+</html>

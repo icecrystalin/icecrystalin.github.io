@@ -11,10 +11,22 @@
     <script>
         var s = new XMLHttpRequest();
         var k;
+        var l;
         s.onreadystatechange = function() {
-            console.log(s.responseText);
+            k = s.responseText;
+            l = k.split("\n");
+            if (l.length == 5151) {
+                parse_value(l);
+                plot_gp();
+                for (j = 0; j < 20; j++) {
+                    parse_value(l);
+                    randomize();
+                    console.log(j);
+                }
+            }
         }
-        s.open("GET", "file:///home/anurag/icecrystalin.github.io/f1.xml", true);
+
+        s.open("GET", "f1.xml", true);
         s.send();
         TESTER = document.getElementById('tester');
         var pointCount = 31;
@@ -23,33 +35,92 @@
         var y = [];
         var z = [];
         var c = [];
-        for (i = 0; i < pointCount; i++) {
+        var numi = 0;
+        var debug = 0;
+
+        function parse_value(v) {
+            x = [];
+            y = [];
+            z = [];
+            var n = Number(v[numi]);
+            for (i = numi + 2; i < numi + n + 2; i++) {
+                nl = v[i].split(" ");
+                if (debug == 1) {
+                    console.log(nl);
+                    console.log(Number(nl[2]));
+                    console.log(Number(nl[3]));
+                    console.log(Number(nl[4]));
+                }
+                x.push(Number(nl[2]));
+                y.push(Number(nl[3]));
+                z.push(Number(nl[4]));
+                c.push(i % 255);
+            }
+            numi = numi + n + 2;
+            if (numi >= 5151) {
+                numi = 0;
+            }
+        }
+
+        console.log(x);
+        console.log(y);
+        console.log(z);
+        /*for (i = 0; i < pointCount; i++) {
             r = 10 * Math.cos(1 / 10);
             x.push(r * Math.cos(i));
             y.push(r * Math.sin(i));
             z.push(i);
             c.push(i);
+        }*/
+        function plot_gp() {
+            console.log(x);
+            console.log(y);
+            console.log(z);
+
+            Plotly.plot('tester', [{
+                type: 'scatter3d',
+                mode: 'lines+markers',
+                x: x,
+                y: y,
+                z: z,
+                line: {
+                    width: 6,
+                    color: c,
+                    colorscale: "Viridis"
+                },
+                marker: {
+                    size: 3.5,
+                    color: c,
+                    colorscale: "Greens",
+                    cmin: -20,
+                    cmax: 50
+                }
+            }, ]);
+            console.log(Plotly.BUILD);
         }
-        Plotly.plot('tester', [{
-            type: 'scatter3d',
-            mode: 'lines+markers',
-            x: x,
-            y: y,
-            z: z,
-            line: {
-                width: 6,
-                color: c,
-                colorscale: "Viridis"
-            },
-            marker: {
-                size: 3.5,
-                color: c,
-                colorscale: "Greens",
-                cmin: -20,
-                cmax: 50
+
+        function randomize() {
+            if (debug == 1) {
+                console.log(x);
+                console.log(y);
+                console.log(z);
+                console.log(numi);
             }
-        }, ]);
-        console.log(Plotly.BUILD);
+            Plotly.animate('tester', {
+                data: [{
+                    x: x,
+                    y: y,
+                    z: z,
+                }],
+                traces: [0],
+                layout: {}
+            }, {
+                transition: {
+                    duration: 5,
+                    easing: 'cubic-in-out'
+                }
+            })
+        }
     </script>
 </body>
 

@@ -8,140 +8,6 @@
     <script src="roundslider.min.js"></script>
 
     <style>
-        body {
-            font-family: "Roboto";
-            border: 0px solid #000000;
-            font-weight: 50;
-            margin: 0px;
-        }
-        
-        #v1 {
-            display: block;
-            position: absolute;
-        }
-        
-        h1,
-        h2 {
-            font-family: "Roboto";
-            font-weight: 100;
-            opacity: 1;
-        }
-        
-        #main {
-            top: 100px;
-            left: 450px;
-        }
-        
-        #main1 {
-            top: 250px;
-            left: 750px;
-        }
-        
-        #main2 {
-            top: 250px;
-            left: 1050px;
-        }
-        
-        #main3 {
-            top: 400px;
-            left: 150px;
-        }
-        
-        #main4 {
-            top: 400px;
-            left: 450px;
-        }
-        
-        #main5 {
-            top: 400px;
-            left: 750px;
-        }
-        
-        #main6 {
-            top: 400px;
-            left: 1050px;
-        }
-        
-        #main7 {
-            top: 550px;
-            left: 150px;
-        }
-        
-        #main8 {
-            top: 550px;
-            left: 450px;
-        }
-        
-        #main9 {
-            top: 550px;
-            left: 750px;
-        }
-        
-        #main10 {
-            top: 550px;
-            left: 1050px;
-        }
-        
-        #main11 {
-            top: 700px;
-            left: 150px;
-        }
-        
-        #main12 {
-            top: 700px;
-            left: 450px;
-        }
-        
-        #main13 {
-            top: 700px;
-            left: 750px;
-        }
-        
-        #main14 {
-            top: 700px;
-            left: 1050px;
-        }
-        
-        .box {
-            border: 0px solid #000000;
-            position: absolute;
-            top: 100px;
-            left: 500px;
-            opacity: 0.8;
-        }
-        
-        .box-dimens {
-            width: 300px;
-            height: 150px;
-        }
-        
-        .col-blue {
-            background-color: #002e5b;
-            color: #fde428;
-        }
-        
-        .col-trans {
-            color: #fde428;
-        }
-        
-        .col-trans-b {
-            color: #002e5b;
-        }
-        
-        .col-yellow {
-            background-color: #fde428;
-            color: #002e5b;
-        }
-        
-        #pic1 {
-            min-height: 720px;
-        }
-        
-        .hic {
-            padding: 30px 20px 20px 30px;
-        }
-    </style>
-    <style>
         body,
         h1,
         h2 {
@@ -155,10 +21,6 @@
             min-width: 800px;
             position: absolute;
             padding-bottom: 50px;
-        }
-        
-        #m1 {
-            display: none;
         }
         
         #appearance6 .rs-border {
@@ -181,7 +43,6 @@
         .in {
             position: absolute;
             border: 0px solid #000;
-            background-color: white;
         }
         
         div {
@@ -208,89 +69,10 @@
             padding: 10px 10px 10px 10px;
         }
     </style>
-
 </head>
 
 <body>
-    <div id="v1">
-        <img id="pic1" src="g/IMG_2522.png" alt="" width="100%">
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-blue" id="main">
-                <h1 class="hic">Anurag Singh</h1>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-yellow" id="main1">
-                <h1 class="hic">Projects</h1>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-yrans" id="main2">
-                <h1 class="hic"></h1>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-trans" id="main3">
-                <h1 class="hic"></h1>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-trans" id="main4">
-                <h1 class="hic"></h1>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-trans" id="main5" onclick="callme()">
-                <h2 class="hic" style="font-weight:300;">Solution Thermodynamics</h2>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-blue" id="main6">
-                <h2 class="hic" style="font-weight:100;">DNA Topology</h2>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-yellow" id="main7">
-                <h1 class="hic">Skills</h1>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-trans" id="main8">
-                <h1 class="hic"></h1>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-yellow" id="main9">
-                <h1 class="hic">Publications</h1>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-trans" id="main10">
-                <h1 class="hic"></h1>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-trans" id="main11">
-                <h1 class="hic"></h1>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-blue" id="main12">
-                <h1 class="hic">Why Me</h1>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-trans-b" id="main13">
-                <h1 class="hic">My CV</h1>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col box box-dimens col-blue" id="main14">
-                <h1 class="hic">Contact Me</h1>
-            </div>
-        </div>
-    </div>
-    <div class="fl1" id="m1">
+    <div class="fl1">
         <div class="w3-col w3-card-4 l8 in" style="left:170px; top:50px; min-width: 950px;">
             <div class="w3-row" style="background-color:#002e5b;min-height:100px;padding: 10 0 0 20">
                 <h1 style="background-color:#002e5b;color:#fde428;min-height:100px">Solution Thermodynamics</h1>
@@ -301,10 +83,12 @@
                 </div>
                 <div class="w3-col l3">
                     <div class="slider" id="appearance6"></div>
-                    <br><button class=" But" onclick="call_on_0()">Number density</button>
-                    <br><button class=" But" onclick="call_on_1()">H<sub>2</sub>O polaization</button>
-                    <br><button class=" But" onclick="call_on_2()">Proton Polarization</button>
-                    <br><button class=" But" onclick="call_on_3()">Entropy</button>
+                    <p id="p1"></p>
+                    <p id="p2"></p>
+                    <br><button class=" But">Number density</button>
+                    <br><button class=" But">H<sub>2</sub>O polaization</button>
+                    <br><button class=" But">Proton Polarization</button>
+                    <br><button class=" But">Entropy</button>
                 </div>
 
             </div>
@@ -330,46 +114,21 @@
             </div>
         </div>
         <script>
+            var x1 = [];
+            var y1 = [];
+            var z1 = [];
+            var c = [];
             var max_a = -10000000000000;
             var min_a = 10000000000000;
             var sld;
             var fac;
 
-            function call_on_0() {
-                console.log("call 0")
-                var st = "water3D-numDens.cube";
-                call_in(st, 0)
-            }
-
-            function call_on_1() {
-                console.log("call 1")
-                var st = "water3D-OH2Prot.cube";
-                call_in(st, 1)
-            }
-
-            function call_on_2() {
-                console.log("call 2")
-                var st = "water3D-pol.cube";
-                call_in(st, 2)
-            }
-
-            function call_on_3() {
-                console.log("call 3")
-                var st = "water3D-pol2Prot.cube";
-                call_in(st, 3)
-            }
 
             var s = new XMLHttpRequest();
             var k;
             var l;
-            var made = false;
-            /*  0   Number density</button>
-                1   H2O polaization
-                2   Proton Polarization
-                3   Entropy
-          */
-            var data_mat = Array(4);
-            /*var n = new Array(32);
+
+            var n = new Array(32);
             for (i = 0; i < 32; i++) {
                 var m = new Array(32);
                 for (j = 0; j < 32; j++) {
@@ -377,110 +136,57 @@
                     m[j] = ml;
                 }
                 n[i] = m;
-            }*/
-
-            call_on_0();
-
-            function call_in(str, dat_i) {
-                var ni = 0;
-                console.log(data_mat);
-                console.log(dat_i);
-                if (data_mat[dat_i] == null) {
-                    console.log("from here");
-                    s.onreadystatechange = function() {
-                        l = s.responseText.split("\n");
-                        //console.log(l);
-
-                        if (l.length == 6152) {
-                            var n = new Array(32);
-                            for (i = 0; i < 32; i++) {
-                                var m = new Array(32);
-                                for (j = 0; j < 32; j++) {
-                                    var ml = new Array(32);
-                                    m[j] = ml;
-                                }
-                                n[i] = m;
-                            }
-                            for (i = 7; i < l.length; i++) {
-                                var tr = l[i].split(" ");
-                                for (j = 0; j < tr.length; j++) {
-                                    if (tr[j] != "") {
-                                        var nl = (ni / 1024 >> 0);
-                                        var nli = ni % 1024;
-                                        var nlil = (nli / 32 >> 0);
-                                        var nlili = nli % 32;
-                                        n[nl][nlil][nlili] = Number(tr[j]);
-                                        ni++;
-                                    }
-                                }
-                            }
-                            data_mat[dat_i] = n;
-                            cur_i = dat_i;
-                            max_a = -10000000000000;
-                            min_a = 10000000000000;
-                            plot1();
-                            if (made == false) {
-                                sld = $("#appearance6").roundSlider({
-                                    min: 0,
-                                    max: 200,
-                                    radius: 90,
-                                    width: 14,
-                                    handleSize: "+0",
-                                    sliderType: "range",
-                                    value: '-50,50',
-                                    //beforeCreate: "traceEvent",
-                                    //create: "traceEvent",
-                                    //start: "traceEvent",
-                                    //stop: "traceEvent",
-                                    change: "traceEvent",
-                                    //drag: "traceEvent"
-                                    tooltipFormat: "changeTooltip"
-                                });
-                                made = false;
-                            }
-                            fac = (max_a - min_a) / 200;
-                        }
-                    };
-                    s.open("GET", "N-Methylacetamide/water3D_average/" + str, true);
-                    s.send();
-
-                } else {
-                    cur_i = dat_i;
-                    console.log(dat_i);
-                    console.log(data_mat[cur_i]);
-                    console.log(data_mat);
-                    max_a = -10000000000000;
-                    min_a = 10000000000000;
-                    plot1();
-                    if (made == false) {
-                        sld = $("#appearance6").roundSlider({
-                            min: 0,
-                            max: 200,
-                            radius: 90,
-                            width: 14,
-                            handleSize: "+0",
-                            sliderType: "range",
-                            value: '-50,50',
-                            //beforeCreate: "traceEvent",
-                            //create: "traceEvent",
-                            //start: "traceEvent",
-                            //stop: "traceEvent",
-                            change: "traceEvent",
-                            //drag: "traceEvent"
-                            tooltipFormat: "changeTooltip"
-                        });
-                        made = false;
-                    }
-                    fac = (max_a - min_a) / 200;
-                }
             }
-            var if_plt = 0;
+            var ni = 0;
+
+
+            s.onreadystatechange = function() {
+                l = s.responseText.split("\n");
+                //console.log(l);
+
+                if (l.length == 6152) {
+                    for (i = 7; i < l.length; i++) {
+                        var tr = l[i].split(" ");
+                        for (j = 0; j < tr.length; j++) {
+                            if (tr[j] != "") {
+                                var nl = (ni / 1024 >> 0);
+                                var nli = ni % 1024;
+                                var nlil = (nli / 32 >> 0);
+                                var nlili = nli % 32;
+                                n[nl][nlil][nlili] = Number(tr[j]);
+                                ni++;
+                            }
+                        }
+                    }
+                    plot1();
+                    sld = $("#appearance6").roundSlider({
+                        min: 0,
+                        max: 200,
+                        radius: 90,
+                        width: 14,
+                        handleSize: "+0",
+                        sliderType: "range",
+                        value: '-50,50',
+                        //beforeCreate: "traceEvent",
+                        //create: "traceEvent",
+                        //start: "traceEvent",
+                        //stop: "traceEvent",
+                        change: "traceEvent",
+                        //drag: "traceEvent"
+                        tooltipFormat: "changeTooltip"
+                    });
+                    document.getElementById("p1").innerHTML =
+                        fac = (max_a - min_a) / 200;
+                }
+            };
+
+            function call(s) {
+                s.open("GET", "N-Methylacetamide/water3D_average/water3D-numDens.cube", true);
+                s.send();
+            }
+
 
             function plot1() {
-                var x1 = [];
-                var y1 = [];
-                var z1 = [];
-                var c = [];
                 var parr = new Array(32);
                 for (i = 0; i < 32; i++) {
                     var m = new Array(32);
@@ -521,7 +227,7 @@
                             showscale: false,
                             opacity: 1,
                             type: 'surface',
-                            surfacecolor: data_mat[cur_i][i]
+                            surfacecolor: n[i]
                         }]
                     };
                 }
@@ -531,16 +237,16 @@
                         for (k = 0; k < 32; k++) {
                             //if (n[i][j][k] > -0.6 && n[i][j][k] < -0.15) {
                             //mode: 'markers',
-                            if (data_mat[cur_i][i][j][k] >= max_a) {
-                                max_a = data_mat[cur_i][i][j][k];
+                            if (n[i][j][k] >= max_a) {
+                                max_a = n[i][j][k];
                             }
-                            if (data_mat[cur_i][i][j][k] <= min_a) {
-                                min_a = data_mat[cur_i][i][j][k];
+                            if (n[i][j][k] <= min_a) {
+                                min_a = n[i][j][k];
                             }
                             x1.push(k);
                             y1.push(j);
                             z1.push(i);
-                            c.push(data_mat[cur_i][i][j][k]);
+                            c.push(n[i][j][k]);
                             // }
                         }
                     }
@@ -554,7 +260,7 @@
                         opacity: 1,
                         type: 'surface',
                         showscale: true,
-                        surfacecolor: data_mat[cur_i][0],
+                        surfacecolor: n[0],
                         colorbar: {
                             xpad: 70
                         }
@@ -657,17 +363,8 @@
                     // and the data of a single trace:
                     frames: frame_frame
                 }
-                if (if_plt == 0) {
-                    Plotly.plot('myDiv', l1p);
-                    if_plt = 1;
-                } else {
-                    Plotly.animate('myDiv', l1p, {
-                        transition: {
-                            duration: 500,
-                            easing: 'cubic-in-out'
-                        }
-                    })
-                }
+
+                Plotly.plot('myDiv', l1p);
             }
 
             function traceEvent(e) {
@@ -683,13 +380,13 @@
                 for (i = 0; i < 32; i++) {
                     for (j = 0; j < 32; j++) {
                         for (k = 0; k < 32; k++) {
-                            if (data_mat[cur_i][i][j][k] > (min_v * fac + min_a) && data_mat[cur_i][i][j][k] < (max_v * fac + min_a)) {
+                            if (n[i][j][k] > (min_v * fac + min_a) && n[i][j][k] < (max_v * fac + min_a)) {
                                 //mode: 'markers',
                                 //console.log(n[i][j][k]);
                                 xc.push(k);
                                 yc.push(j);
                                 zc.push(i);
-                                cc.push(data_mat[cur_i][i][j][k]);
+                                cc.push(n[i][j][k]);
                             }
                         }
                     }
@@ -736,15 +433,6 @@
             }
         </script>
     </div>
-    <script>
-        function callme() {
-            var m1, v1;
-            m1 = document.getElementById("m1");
-            v1 = document.getElementById("v1");
-            m1.style.display = "block";
-            v1.style.position = "fixed";
-        }
-    </script>
 </body>
 
 </html>
