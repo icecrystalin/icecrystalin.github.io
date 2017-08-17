@@ -1,0 +1,170 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="W3CSS/w3.css">
+    <script src="plotly-latest.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <link href="roundslider.min.css" rel="stylesheet" />
+    <script src="roundslider.min.js"></script>
+
+    <style>
+        body,
+        h1,
+        h2 {
+            font-family: "Roboto";
+            border: 0px solid #000000;
+            font-weight: 100;
+            margin: 0px;
+        }
+        
+        .fl1 {
+            min-width: 800px;
+            position: absolute;
+            padding-bottom: 50px;
+        }
+        
+        #appearance6 .rs-border {
+            border-width: 0px;
+        }
+        
+        #appearance6 .rs-border.rs-outer {
+            border: 14px solid #002e5b;
+        }
+        
+        #appearance6 .rs-range-color {
+            background: #fde428;
+        }
+        
+        #appearance6 .rs-handle {
+            background: #fde428;
+            margin-left: 0 !important;
+        }
+        
+        .in {
+            position: absolute;
+            border: 0px solid #000;
+        }
+        
+        div {
+            border: 0px solid #000;
+        }
+        
+        .But {
+            background-color: #002e5b;
+            color: #fde428;
+            font-weight: 300;
+            border: 0px solid #000;
+            width: 200px;
+            margin: 5px 0px 5px 0px;
+            padding: 10px 10px 10px 10px;
+        }
+        
+        .But:hover {
+            background-color: #fde428;
+            color: #002e5b;
+            font-weight: 300;
+            border: 0px solid #000;
+            /*width: 200px;*/
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            padding: 10px 10px 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fl2">
+        <div class="w3-col w3-card-4 l8 in" style="left:170px; top:50px; min-width: 950px;">
+            <div class="w3-row" style="background-color:#002e5b;min-height:100px;padding: 10 0 0 20">
+                <h1 style="background-color:#002e5b;color:#fde428;min-height:100px">DNA Topology</h1>
+            </div>
+            <div class="w3-row">
+                <div class="w3-col l9">
+                    <div id="myDiv1"></div>
+                </div>
+                <div class="w3-col l3">
+                </div>
+
+            </div>
+            <div class="w3-row" style="background-color:#002e5b;min-height:50px;padding: 10 0 0 20">
+                <h2 style="background-color:#002e5b;color:#fde428;min-height:50px">Description</h2>
+            </div>
+            <div class="w3-row" style="background-color:#fde428 ; color:#002e5b;font-weight: 300;min-height:50px;padding: 50 20 50 20">
+                <p>
+                    Topology defines the properties of space or structures that are preserved under continuous changes, such as stretching, crumpling and bending, but not tearing or gluing. Important topological properties include connectedness and compactness. The packing,
+                    twisting, and topological constraints considered altogether leads to topological entanglement, it can pose severe functional obstacles for study of DNA. It is developed as a field of study out of geometry and set theory, through analysis
+                    of concepts such as space, dimension, and transformation.</p>
+                <p>
+                    High degree of uncertainty is found in eukaryotic DNA replication. Although the spatial and temporal pattern of DNA replication must complete the replication process in an accurate and timely manner. Failure to replicate even a small part of the genome
+                    would disrupt proper segregation of the genetic material to the two daughter cells during mitosis, leading to genomic instability.
+                </p>
+                <p>Topoisomerases are ubiquitous proteins found in all three domains of life (bacteria, archaea and eukarya). They are capable of changing the topology of DNA via transient breaks on one or two of the DNA strands to allow passage of either
+                    a single or double DNA strand through the break.</p>
+                <p>Knots are closed loops which are tabulated and characterised by the crossing number. Crossing number is the number of times the curve of a knot has crossed itself given that the knot exists in its simplest form.</p>
+                <p>In this project I develop a robust computer program to characterize knots by Alexander polynomial, a topological invariant. This study will provide a basis for further studies on the mechanism of enzyme action towards selective topology
+                    simplification in circular DNA.</p>
+
+                <p>The above figure is the of a 6<sub>1</sub>knot analysed as per Alexender Polynomial algorithms</p>
+
+
+            </div>
+            <div class="w3-row" style="background-color:#002e5b;color:#fde428;font-weight: 300;min-height:50px;padding: 10 0 0 100">
+                Property of Anurag singh
+            </div>
+        </div>
+        <script>
+            var x12 = [];
+            var y12 = [];
+            var z12 = [];
+            var c2 = [];
+
+
+            var s1 = new XMLHttpRequest();
+            call1();
+
+            s1.onreadystatechange = function() {
+                l = s1.responseText.split("\n");
+                console.log(l);
+                if (l.length == 470) {
+                    for (i = 0; i < l.length; i++) {
+                        var m = l[i].split(" ");
+                        if (m.length == 4) {
+                            x12.push(Number(m[1]));
+                            y12.push(Number(m[2]));
+                            z12.push(Number(m[3]));
+                            c2.push(Number(m[0]));
+
+                        }
+                    }
+                    plot2();
+
+                }
+
+            };
+
+            function call1() {
+                s1.open("GET", "arc3.fl", true);
+                s1.send();
+            }
+
+
+            function plot2() {
+                Plotly.plot('myDiv1', {
+                    data: [{
+                        type: 'scatter3d',
+                        mode: 'lines',
+                        x: x12,
+                        y: y12,
+                        z: z12,
+                        line: {
+                            width: 6,
+                            color: c2,
+                            colorscale: "Viridis"
+                        }
+                    }]
+                })
+            }
+        </script>
+    </div>
+</body>
+
+</html>

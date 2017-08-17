@@ -151,6 +151,10 @@
             margin: 0px;
         }
         
+        h3 {
+            font-weight: 100;
+        }
+        
         .fl1 {
             min-width: 800px;
             position: absolute;
@@ -158,6 +162,30 @@
         }
         
         #m1 {
+            display: none;
+        }
+        
+        #m2 {
+            display: none;
+        }
+        
+        #m3 {
+            display: none;
+        }
+        
+        #m4 {
+            display: none;
+        }
+        
+        #m5 {
+            display: none;
+        }
+        
+        #m6 {
+            display: none;
+        }
+        
+        #m7 {
             display: none;
         }
         
@@ -207,20 +235,43 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             padding: 10px 10px 10px 10px;
         }
+        
+        .inp {
+            background-color: #fde428;
+            border: 2px solid #002e5b;
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            /*border-bottom: 2px;*/
+            width: 400px;
+        }
+        
+        #info {
+            align-content: flex-end;
+            background-color: #fdec68;
+            border: 2px solid #002e5b;
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            width: 200px;
+            margin: 20px 0px 5px 0px;
+            padding: 20px 10px 5px 10px;
+            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+        }
     </style>
 
 </head>
 
 <body>
     <div id="v1">
-        <img id="pic1" src="g/IMG_2522_3.jpg" alt="" width="100%">
+        <img id="pic1" src="g/IMG_2522_3.jpg" onclick="main_call()" alt="" width="100%">
         <div class="w3-row">
-            <div class="w3-col box box-dimens col-blue" id="main">
+            <div class="w3-col box box-dimens col-blue" id="main" onclick="callme2()">
                 <h1 class="hic">Anurag Singh</h1>
             </div>
         </div>
         <div class="w3-row">
-            <div class="w3-col box box-dimens col-yellow" id="main1">
+            <div class="w3-col box box-dimens col-yellow" id="main1" onclick="callme6()">
                 <h1 class="hic">Projects</h1>
             </div>
         </div>
@@ -245,12 +296,12 @@
             </div>
         </div>
         <div class="w3-row">
-            <div class="w3-col box box-dimens col-blue" id="main6">
+            <div class="w3-col box box-dimens col-blue" id="main6" onclick="callme1()">
                 <h2 class="hic" style="font-weight:100;">DNA Topology</h2>
             </div>
         </div>
         <div class="w3-row">
-            <div class="w3-col box box-dimens col-yellow" id="main7">
+            <div class="w3-col box box-dimens col-yellow" id="main7" onclick="callme3()">
                 <h1 class="hic">Skills</h1>
             </div>
         </div>
@@ -260,7 +311,7 @@
             </div>
         </div>
         <div class="w3-row">
-            <div class="w3-col box box-dimens col-yellow" id="main9">
+            <div class="w3-col box box-dimens col-yellow" id="main9" onclick="callme4()">
                 <h1 class="hic">Publications</h1>
             </div>
         </div>
@@ -285,7 +336,7 @@
             </div>
         </div>
         <div class="w3-row">
-            <div class="w3-col box box-dimens col-blue" id="main14">
+            <div class="w3-col box box-dimens col-blue" id="main14" onclick="callme5()">
                 <h1 class="hic">Contact Me</h1>
             </div>
         </div>
@@ -301,6 +352,7 @@
                 </div>
                 <div class="w3-col l3">
                     <div class="slider" id="appearance6"></div>
+                    <div class="slid_info" id="info">hELLO</div>
                     <br><button class=" But" onclick="call_on_0()">Number density</button>
                     <br><button class=" But" onclick="call_on_1()">H<sub>2</sub>O polaization</button>
                     <br><button class=" But" onclick="call_on_2()">Proton Polarization</button>
@@ -334,6 +386,8 @@
             var min_a = 10000000000000;
             var sld;
             var fac;
+
+            var info = document.getElementById('info');
 
             function call_on_0() {
                 console.log("call 0")
@@ -433,12 +487,16 @@
                                     //start: "traceEvent",
                                     //stop: "traceEvent",
                                     change: "traceEvent",
-                                    //drag: "traceEvent"
-                                    tooltipFormat: "changeTooltip"
+                                    drag: "traceEvent2",
+                                    showTooltip: false,
+                                    //tooltipFormat: "changeTooltip"
                                 });
                                 made = false;
                             }
                             fac = (max_a - min_a) / 200;
+                            var imi = (-50 * fac + min_a);
+                            var ima = (50 * fac + min_a);
+                            info.innerHTML = imi.toFixed(4) + ' - ' + ima.toFixed(4);
                         }
                     };
                     s.open("GET", "N-Methylacetamide/water3D_average/" + str, true);
@@ -466,12 +524,17 @@
                             //start: "traceEvent",
                             //stop: "traceEvent",
                             change: "traceEvent",
-                            //drag: "traceEvent"
-                            tooltipFormat: "changeTooltip"
+                            drag: "traceEvent2",
+                            showTooltip: false,
+                            //tooltipFormat: "changeTooltip"
                         });
                         made = false;
                     }
                     fac = (max_a - min_a) / 200;
+
+                    var imi = (-50 * fac + min_a);
+                    var ima = (50 * fac + min_a);
+                    info.innerHTML = imi.toFixed(4) + ' ' + ima.toFixed(4);
                 }
             }
             var if_plt = 0;
@@ -722,6 +785,15 @@
                 });
             }
 
+            function traceEvent2(e) {
+                var val = e.value.split(",");
+                var min_v = Number(val[0]);
+                var max_v = Number(val[1]);
+                var mi = (min_v * fac + min_a);
+                var ma = (max_v * fac + min_a);
+                info.innerHTML = mi.toFixed(4) + " - " + ma.toFixed(4);
+            }
+
             function changeTooltip(e) {
                 var val = e.value.split(",");
                 var min_v = Number(val[0]);
@@ -736,15 +808,255 @@
             }
         </script>
     </div>
+    <div class="fl1" id="m2">
+        <div class="w3-col w3-card-4 l8 in" style="left:170px; top:50px; min-width: 950px;">
+            <div class="w3-row" style="background-color:#002e5b;min-height:100px;padding: 10 0 0 20">
+                <h1 style="background-color:#002e5b;color:#fde428;min-height:100px">DNA Topology</h1>
+            </div>
+            <div class="w3-row">
+                <div class="w3-col l9">
+                    <div id="myDiv1"></div>
+                </div>
+                <div class="w3-col l3">
+                </div>
+
+            </div>
+            <div class="w3-row" style="background-color:#002e5b;min-height:50px;padding: 10 0 0 20">
+                <h2 style="background-color:#002e5b;color:#fde428;min-height:50px">Description</h2>
+            </div>
+            <div class="w3-row" style="background-color:#fde428 ; color:#002e5b;font-weight: 300;min-height:50px;padding: 50 20 50 20">
+                <p>
+                    Topology defines the properties of space or structures that are preserved under continuous changes, such as stretching, crumpling and bending, but not tearing or gluing. Important topological properties include connectedness and compactness. The packing,
+                    twisting, and topological constraints considered altogether leads to topological entanglement, it can pose severe functional obstacles for study of DNA. It is developed as a field of study out of geometry and set theory, through analysis
+                    of concepts such as space, dimension, and transformation.</p>
+                <p>
+                    High degree of uncertainty is found in eukaryotic DNA replication. Although the spatial and temporal pattern of DNA replication must complete the replication process in an accurate and timely manner. Failure to replicate even a small part of the genome
+                    would disrupt proper segregation of the genetic material to the two daughter cells during mitosis, leading to genomic instability.
+                </p>
+                <p>Topoisomerases are ubiquitous proteins found in all three domains of life (bacteria, archaea and eukarya). They are capable of changing the topology of DNA via transient breaks on one or two of the DNA strands to allow passage of either
+                    a single or double DNA strand through the break.</p>
+                <p>Knots are closed loops which are tabulated and characterised by the crossing number. Crossing number is the number of times the curve of a knot has crossed itself given that the knot exists in its simplest form.</p>
+                <p>In this project I develop a robust computer program to characterize knots by Alexander polynomial, a topological invariant. This study will provide a basis for further studies on the mechanism of enzyme action towards selective topology
+                    simplification in circular DNA.</p>
+
+                <p>The above figure is the of a 6<sub>1</sub>knot analysed as per Alexender Polynomial algorithms</p>
+
+
+            </div>
+            <div class="w3-row" style="background-color:#002e5b;color:#fde428;font-weight: 300;min-height:50px;padding: 10 0 0 100">
+                Property of Anurag singh
+            </div>
+        </div>
+        <script>
+            var x12 = [];
+            var y12 = [];
+            var z12 = [];
+            var c2 = [];
+
+
+            var s1 = new XMLHttpRequest();
+            call1();
+
+            s1.onreadystatechange = function() {
+                l = s1.responseText.split("\n");
+                console.log(l);
+                if (l.length == 470) {
+                    for (i = 0; i < l.length; i++) {
+                        var m = l[i].split(" ");
+                        if (m.length == 4) {
+                            x12.push(Number(m[1]));
+                            y12.push(Number(m[2]));
+                            z12.push(Number(m[3]));
+                            c2.push(Number(m[0]));
+
+                        }
+                    }
+                    plot2();
+
+                }
+
+            };
+
+            function call1() {
+                s1.open("GET", "arc3.fl", true);
+                s1.send();
+            }
+
+
+            function plot2() {
+                Plotly.plot('myDiv1', {
+                    data: [{
+                        type: 'scatter3d',
+                        mode: 'lines',
+                        x: x12,
+                        y: y12,
+                        z: z12,
+                        line: {
+                            width: 6,
+                            color: c2,
+                            colorscale: "Viridis"
+                        }
+                    }]
+                })
+            }
+        </script>
+    </div>
+    <div class="fl1" id="m3">
+        <div class="w3-col w3-card-4 l8 in" style="left:370px; top:150px; min-width: 500px;">
+            <div class="w3-row" style="background-color:#002e5b;min-height:100px;padding: 10 0 0 20">
+                <h1 style="background-color:#002e5b;color:#fde428;min-height:100px">Anurag Singh</h1>
+            </div>
+            <div class="w3-row" style="background-color:#fde428 ; color:#002e5b;font-weight: 300;min-height:50px;padding: 50 20 50 20">
+                Integrated Master of Science in Chemistry<br> Indian Institute of Technology Roorkee<br> sagacious112358@gmail.com
+                <br> +91-7376353896
+                <br>
+
+            </div>
+            <div class="w3-row" style="background-color:#002e5b;color:#fde428;font-weight: 300;min-height:50px;padding: 10 0 0 100">
+                Property of Anurag singh
+            </div>
+        </div>
+    </div>
+    <div class="fl1" id="m4">
+        <div class="w3-col w3-card-4 l8 in" style="left:370px; top:150px; min-width: 500px;">
+            <div class="w3-row" style="background-color:#002e5b;min-height:100px;padding: 10 0 0 20">
+                <h1 style="background-color:#002e5b;color:#fde428;min-height:100px">Skills</h1>
+            </div>
+            <div class="w3-row" style="background-color:#fde428 ; color:#002e5b;font-weight: 300;min-height:50px;padding: 50 20 50 20">
+                <h3>Computer languages</h3><br> Python, C#, C, C++, Fortran, CSS Javascript, php, and HTML<br>
+                <h3>
+                    Software Packages</h3><br> MIcMathematica, Avagadro, Chem. Draw, CAD, Material studio, CASTEP, Linux, Android, OpenGL, OpenCL, WebGLs<br>
+                <h3>Personal</h3><br> Lead<br>
+            </div>
+            <div class="w3-row" style="background-color:#002e5b;color:#fde428;font-weight: 300;min-height:50px;padding: 10 0 0 100">
+                Property of Anurag singh
+            </div>
+        </div>
+    </div>
+    <div class="fl1" id="m5">
+        <div class="w3-col w3-card-4 l8 in" style="left:370px; top:150px; min-width: 500px;">
+            <div class="w3-row" style="background-color:#002e5b;min-height:100px;padding: 10 0 0 20">
+                <h1 style="background-color:#002e5b;color:#fde428;min-height:100px">Publication</h1>
+            </div>
+            <div class="w3-row" style="background-color:#fde428 ; color:#002e5b;font-weight: 300;min-height:50px;padding: 50 20 50 20">
+                Rasmus Persson, Viren Pattni, Anurag Singh, and Matthias Heyden, "Signatures of solvation thermodynamics in the spectra of intermolecular vibrations", submitted to Journal of Chemical Theory and Computation., 2017
+            </div>
+            <div class="w3-row" style="background-color:#002e5b;color:#fde428;font-weight: 300;min-height:50px;padding: 10 0 0 100">
+                Property of Anurag singh
+            </div>
+        </div>
+    </div>
+
+    <div class="fl1" id="m6">
+        <div class="w3-col w3-card-4 l8 in" style="left:370px; top:90px; min-width: 500px;">
+            <div class="w3-row" style="background-color:#002e5b;min-height:100px;padding: 10 0 0 20">
+                <h1 style="background-color:#002e5b;color:#fde428;min-height:100px">Contact me</h1>
+            </div>
+            <div class="w3-row" style="background-color:#fde428 ; color:#002e5b;font-weight: 300;min-height:50px;padding: 50 20 50 20">
+                <form>
+                    <h3>Your email id</h3><br>
+                    <input class="inp" type="text" name="" value=""><br>
+                    <h3>Name</h3><br>
+                    <input class="inp" type="text" name="" value=""><br>
+                    <h3>Message</h3><br>
+                    <input class="inp" type="text" name="" value=""><br>
+                </form>
+                Leave your contacts here with a message I will contact you asap
+
+            </div>
+            <div class="w3-row" style="background-color:#002e5b;color:#fde428;font-weight: 300;min-height:50px;padding: 10 0 0 100">
+                Property of Anurag singh
+            </div>
+        </div>
+    </div>
+
+    <div class="fl1" id="m7">
+        <div class="w3-col w3-card-4 l8 in" style="left:370px; top:150px; min-width: 500px;">
+            <div class="w3-row" style="background-color:#002e5b;min-height:100px;padding: 10 0 0 20">
+                <h1 style="background-color:#002e5b;color:#fde428;min-height:100px">Projects</h1>
+            </div>
+            <div class="w3-row" style="background-color:#fde428 ; color:#002e5b;font-weight: 300;min-height:50px;padding: 50 20 50 20">
+                <p>
+                    <h3 onclick="call_p1()">Solution Thermodynamics</h3>
+                </p>
+                <p>
+                    <h3 onclick="call_p2()">DNA Topology</h3>
+                </p>
+            </div>
+            <div class="w3-row" style="background-color:#002e5b;color:#fde428;font-weight: 300;min-height:50px;padding: 10 0 0 100">
+                Property of Anurag singh
+            </div>
+        </div>
+    </div>
     <script>
+        var m1, m2, m3, v1;
+        m1 = document.getElementById("m1");
+        v1 = document.getElementById("v1");
+        m2 = document.getElementById("m2");
+        m3 = document.getElementById("m3");
+        m4 = document.getElementById("m4");
+        m5 = document.getElementById("m5");
+        m6 = document.getElementById("m6");
+        m7 = document.getElementById("m7");
+
         function callme() {
-            var m1, v1;
-            m1 = document.getElementById("m1");
-            v1 = document.getElementById("v1");
+
             m1.style.display = "block";
             v1.style.position = "fixed";
         }
+
+        function callme1() {
+            m2.style.display = "block";
+            v1.style.position = "fixed";
+        }
+
+        function callme2() {
+            m3.style.display = "block";
+            v1.style.position = "fixed";
+        }
+
+        function callme3() {
+            m4.style.display = "block";
+            v1.style.position = "fixed";
+        }
+
+        function callme4() {
+            m5.style.display = "block";
+            v1.style.position = "fixed";
+        }
+
+        function callme5() {
+            m6.style.display = "block";
+            v1.style.position = "fixed";
+        }
+
+        function callme6() {
+            m7.style.display = "block";
+            v1.style.position = "fixed";
+        }
+
+        function call_p1() {
+            main_call();
+            callme();
+        }
+
+        function call_p2() {
+            main_call();
+            callme1();
+        }
+
+        function main_call() {
+            m1.style.display = "none";
+            m2.style.display = "none";
+            m3.style.display = "none";
+            m4.style.display = "none";
+            m5.style.display = "none";
+            m6.style.display = "none";
+            m7.style.display = "none";
+            v1.style.position = "absolute";
+        }
     </script>
+
 </body>
 
 </html>

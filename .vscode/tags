@@ -4,9 +4,11 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-a	../new-Copy1.py	/^a = np.matrix([[-0.5447,    1.3323,   -0.0013],[ 0.6985,   -0.6359,    0.0058],[-0.4701,    0.1063,    0.0070],[ 2.0143,   -0.0386,   -0.0057],[-1.6980,   -0.7641,   -0.0059],[ 0.6423,   -1.6500,   -0.0141],[ 2.6279,   -0.5471,    0.7418],[ 1.9657,    1.0301,    0.2163],[ 2.4489,   -0.1908,   -0.9966],[-2.5800,   -0.1596,    0.2234],[-1.8162,   -1.2127,   -0.9959],[-1.6122,   -1.5549,    0.7449]])$/;"	kind:variable	line:32
-a	../new-Copy1.py	/^a = scale(4,a)$/;"	kind:variable	line:33
-a	../new-Copy1.py	/^a = translate(16,16,16,a))$/;"	kind:variable	line:34
+a	../new-Copy1.py	/^a = np.matrix([[-0.5447,    1.3323,   -0.0013],[ 0.6985,   -0.6359,    0.0058],[-0.4701,    0.1063,    0.0070],[ 2.0143,   -0.0386,   -0.0057],[-1.6980,   -0.7641,   -0.0059],[ 0.6423,   -1.6500,   -0.0141],[ 2.6279,   -0.5471,    0.7418],[ 1.9657,    1.0301,    0.2163],[ 2.4489,   -0.1908,   -0.9966],[-2.5800,   -0.1596,    0.2234],[-1.8162,   -1.2127,   -0.9959],[-1.6122,   -1.5549,    0.7449]])$/;"	kind:variable	line:36
+a	../new-Copy1.py	/^a = rotation([0,0,1],-math.pi\/4, a)$/;"	kind:variable	line:39
+a	../new-Copy1.py	/^a = rotation([0,1,0],math.pi\/6, a)$/;"	kind:variable	line:40
+a	../new-Copy1.py	/^a = rotation([1,0,0],-math.pi\/4, a)$/;"	kind:variable	line:38
+a	../new-Copy1.py	/^a = scale(4,a)$/;"	kind:variable	line:37
 backgroundcolor	../new.py	/^            backgroundcolor='rgb(230, 230,230)'$/;"	kind:variable	line:28
 backgroundcolor	../new.py	/^            backgroundcolor='rgb(230, 230,230)'$/;"	kind:variable	line:34
 backgroundcolor	../new.py	/^            backgroundcolor='rgb(230, 230,230)'$/;"	kind:variable	line:40
@@ -19,7 +21,7 @@ layout	../new.py	/^layout = go.Layout($/;"	kind:variable	line:21
 new-Copy1.py	../new-Copy1.py	1;"	kind:file	line:1
 new.py	../new.py	1;"	kind:file	line:1
 r	../new.py	/^r = (np.sin(m0 * phi) ** m1 + np.cos(m2 * phi) ** m3 +$/;"	kind:variable	line:12
-rotation	../new-Copy1.py	/^def rotation(axis, theta, a):$/;"	kind:function	line:21
+rotation	../new-Copy1.py	/^def rotation(axis, theta, b):$/;"	kind:function	line:21
 rotation_matrix	../new-Copy1.py	/^def rotation_matrix(axis, theta):$/;"	kind:function	line:7
 scale	../new-Copy1.py	/^def scale(s,a):$/;"	kind:function	line:3
 scene	../new.py	/^    scene=dict($/;"	kind:variable	line:23
@@ -28,7 +30,7 @@ showbackground	../new.py	/^            showbackground=True,$/;"	kind:variable	li
 showbackground	../new.py	/^            showbackground=True,$/;"	kind:variable	line:39
 surface	../new.py	/^surface = go.Surface(x=x, y=y, z=z, colorscale='Viridis')$/;"	kind:variable	line:19
 title	../new.py	/^    title='Another Parametric Plot',$/;"	kind:variable	line:22
-translate	../new-Copy1.py	/^def translate(x,y,z, a):$/;"	kind:function	line:24
+translate	../new-Copy1.py	/^def translate(x,y,z, a):$/;"	kind:function	line:28
 x	../new.py	/^x = r * np.sin(phi) * np.cos(theta)$/;"	kind:variable	line:14
 xaxis	../new.py	/^        xaxis=dict($/;"	kind:variable	line:24
 y	../new.py	/^y = r * np.cos(phi)$/;"	kind:variable	line:15

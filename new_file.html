@@ -98,6 +98,37 @@
             }, ]);
             console.log(Plotly.BUILD);
         }
+        var frame_frame = new Array(32);
+        for (i = 0; i < 32; i++) {
+            step_frame[i] = {
+                label: i.toString(),
+                method: 'animate',
+                args: [
+                    [i.toString()], {
+                        mode: 'immediate',
+                        frame: {
+                            redraw: false,
+                            duration: 500
+                        },
+                        transition: {
+                            duration: 500
+                        }
+                    }
+                ]
+            };
+            frame_frame[i] = {
+                name: i.toString(),
+                data: [{
+                    x: x,
+                    y: y,
+                    z: z,
+                    showscale: false,
+                    opacity: 1,
+                    type: 'surface',
+                    surfacecolor: n[i]
+                }]
+            };
+        }
 
         function randomize() {
             if (debug == 1) {
