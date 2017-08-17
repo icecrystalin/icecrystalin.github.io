@@ -1001,36 +1001,43 @@
 
         function callme() {
 
+            nonecall();
             m1.style.display = "block";
             v1.style.position = "fixed";
         }
 
         function callme1() {
+            nonecall();
             m2.style.display = "block";
             v1.style.position = "fixed";
         }
 
         function callme2() {
+            nonecall();
             m3.style.display = "block";
             v1.style.position = "fixed";
         }
 
         function callme3() {
+            nonecall();
             m4.style.display = "block";
             v1.style.position = "fixed";
         }
 
         function callme4() {
+            nonecall();
             m5.style.display = "block";
             v1.style.position = "fixed";
         }
 
         function callme5() {
+            nonecall();
             m6.style.display = "block";
             v1.style.position = "fixed";
         }
 
         function callme6() {
+            nonecall();
             m7.style.display = "block";
             v1.style.position = "fixed";
         }
@@ -1045,7 +1052,7 @@
             callme1();
         }
 
-        function main_call() {
+        function nonecall() {
             m1.style.display = "none";
             m2.style.display = "none";
             m3.style.display = "none";
@@ -1053,7 +1060,10 @@
             m5.style.display = "none";
             m6.style.display = "none";
             m7.style.display = "none";
+        }
 
+        function main_call() {
+            nonecall()
             v1.style.position = "absolute";
         }
     </script>
