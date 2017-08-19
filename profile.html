@@ -510,6 +510,8 @@
                     };
                     s.open("GET", "N-Methylacetamide/water3D_average/" + str, true);
                     s.send();
+                    var doc = document.getElementById("myDiv");
+                    doc.innerHTML = "loading ...";
 
                 } else {
                     cur_i = dat_i;
