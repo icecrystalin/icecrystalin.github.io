@@ -327,8 +327,8 @@
             </div>
         </div>
         <div class="w3-row">
-            <div class="w3-col box box-dimens col-blue" id="main12">
-                <h1 class="hic">Why Me</h1>
+            <div class="w3-col box box-dimens col-blue" id="main12" onclick="callme7()">
+                <h1 class="hic">What I do</h1>
             </div>
         </div>
         <div class="w3-row">
@@ -991,6 +991,21 @@
             </div>
         </div>
     </div>
+
+    <div class="fl1" id="m8">
+        <div class="w3-col w3-card-4 l8 in" style="left:370px; top:150px; min-width: 500px;">
+            <div class="w3-row" style="background-color:#002e5b;min-height:100px;padding: 10 0 0 20">
+                <h1 style="background-color:#002e5b;color:#fde428;min-height:100px">What I do</h1>
+            </div>
+            <div class="w3-row" style="background-color:#fde428 ; color:#002e5b;font-weight: 300;min-height:50px;padding: 50 20 50 20">
+                Website development, Frontend & Backend<br> Android app development<br> Software programming<br> IOT
+            </div>
+            <div class="w3-row" style="background-color:#002e5b;color:#fde428;font-weight: 300;min-height:50px;padding: 10 0 0 100">
+                Property of Anurag singh
+            </div>
+        </div>
+    </div>
+
     <script>
         var m1, m2, m3, v1;
         m1 = document.getElementById("m1");
@@ -1001,6 +1016,7 @@
         m5 = document.getElementById("m5");
         m6 = document.getElementById("m6");
         m7 = document.getElementById("m7");
+        m8 = document.getElementById("m8");
 
         function callme() {
 
@@ -1045,6 +1061,12 @@
             v1.style.position = "fixed";
         }
 
+        function callme7() {
+            nonecall();
+            m8.style.display = "block";
+            v1.style.position = "fixed";
+        }
+
         function call_p1() {
             main_call();
             callme();
@@ -1063,6 +1085,7 @@
             m5.style.display = "none";
             m6.style.display = "none";
             m7.style.display = "none";
+            m8.style.display = "none";
         }
 
         function main_call() {
