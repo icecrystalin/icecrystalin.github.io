@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+        
+        #pic {
+            background-image: url("pic1.jpg");
+            background-repeat: no-repeat;
+            width: 120%;
+            max-height: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            border: 0;
+            position: absolute;
+            border-radius: 0 0 150% 150%;
+            text-align: center;
+        }
+        
+        #play {
+            width: 50px;
+            height: 50px;
+            border: 10px solid rgb(255, 255, 255);
+            border: 10px solid rgba(255, 255, 255, 0.6);
+            -moz-background-clip: padding;
+            -webkit-background-clip: padding;
+            background-clip: padding-box;
+            background-color: #ffffff;
+            border-radius: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #bbb;
+        }
+        
+        #play:hover {
+            color: #888;
+        }
+        
+        #round {
+            background: #ffffff;
+            position: absolute;
+            width: 80%;
+            max-width: 800px;
+            margin: 350 auto;
+            height: 70px;
+            border-radius: 100px;
+            display: flex;
+            justify-content: space-between;
+            -webkit-box-shadow: 0 5px 20px #ccc;
+            box-shadow: 0 5px 20px #ccc;
+        }
+        
+        h1,
+        h3 {
+            color: #ffffff;
+        }
+        
+        h1 {
+            font-size: 50px;
+        }
+        
+        h1 {
+            font-size: 50px;
+        }
+        
+        .fl1 {
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        button {
+            background: #ff2c45;
+            height: 50px;
+            border-radius: 50px;
+            border: 0;
+        }
+        
+        #button {
+            padding: 0 20px;
+        }
+        
+        .main,
+        .sub {
+            font-size: 14px;
+        }
+        
+        .sub {
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="pic">
+        <div>
+            <h1>the great out doors</h1>
+            <h3>travel with pleasure</h3>
+        </div>
+        <div id="play">
+            &#9654
+        </div>
+    </div>
+    <div id="round">
+
+
+        <div class="fl1">
+            <span class="main">Where</span><br>
+            <span class="sub">Where is you destinatio</span>
+        </div>
+        <div class="fl1">
+            <span class="main">When</span><br>
+            <span class="sub">Choose date</span>
+        </div>
+        <div class="fl1">
+            <span class="main">People</span><br>
+            <span class="sub">How many are going</span>
+
+        </div>
+        <div class="fl1">
+            <button><span id="button">Find an adventure</span></button>
+        </div>
+    </div>
+</body>
+
+</html>
